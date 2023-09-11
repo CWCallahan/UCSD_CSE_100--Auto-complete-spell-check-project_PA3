@@ -1,0 +1,56 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    PA2 Notes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[[https://sites.google.com/a/eng.ucsd.edu/cse-100-fall-2016/home][Course Page]]
+[[][Back to home]
+
+* Links 
+  [[/Users/Willow/workspace/cse100f16/pa2/repo_st_921_8106_8661_pa2_final/DictionaryBST.h][DictionaryBST.h]] 
+  [[/Users/Willow/workspace/cse100f16/pa2/repo_st_921_8106_8661_pa2_final/DictionaryBST.cpp][DictionaryBST.cpp]]
+
+  [[/Users/Willow/workspace/cse100f16/pa2/repo_st_921_8106_8661_pa2_final/DictionaryHashtable.h][DictionaryHashtable.h]]
+  [[/Users/Willow/workspace/cse100f16/pa2/repo_st_921_8106_8661_pa2_final/DictionaryHashtable.cpp][DictionaryHashtable.cpp]]
+  - possible issue in find
+
+  [[/Users/Willow/workspace/cse100f16/pa2/repo_st_921_8106_8661_pa2_final/DictionaryTrie.h][DictionaryTrie.h]]
+  [[/Users/Willow/workspace/cse100f16/pa2/repo_st_921_8106_8661_pa2_final/DictionaryTrie.cpp][DictionaryTrie.cpp]]
+  
+  [[/Users/Willow/workspace/cse100f16/pa2/repo_st_921_8106_8661_pa2_final/util.h][util.h]]	
+  [[/Users/Willow/workspace/cse100f16/pa2/repo_st_921_8106_8661_pa2_final/util.cpp][util.cpp]]
+  [[/Users/Willow/workspace/cse100f16/pa2/repo_st_921_8106_8661_pa2_final/test.cpp][test.cpp]]
+  [[/Users/Willow/workspace/cse100f16/pa2/repo_st_921_8106_8661_pa2_final/benchdict.cpp][benchdict.cpp]]
+  [[/Users/Willow/workspace/cse100f16/pa2/repo_st_921_8106_8661_pa2_final/benchhash.cpp][benchhash.cpp]]
+
+  [[/Users/Willow/workspace/cse100f16/pa2/repo_st_921_8106_8661_pa2_final/Makefile][Makefile]]
+  [[/Users/Willow/workspace/cse100f16/pa2/repo_st_921_8106_8661_pa2_final/README][README]]
+
+* Tasks
+  - [X] implement bst
+  - [X] implement hash 
+  - [X] implement multi-way
+  - [X] Declare the root array (of array/vec pntr, int)
+  - [X] design the insert algorithm
+  - [X] implement the insert algorithm
+  - [X] Redesign node
+  - [X] reimplement insert
+  - [X] get the dictionaries
+  - [X] run the current tests
+  - [X] Build my tests 
+  - [X] Make findPrefix
+  - [X] test findPrefix
+  - [X] Define the Q
+  - [X] Define the PQ
+  - [X] test
+  - [X] impliment the BFS
+  - [X] return the word vector 
+  - [ ] Make Benchdict
+  - [ ] Do the hash exercise 
+  -
+  - [ ]
+
+** benchhash task
+   - [ ] cite the function
+   - [ ] comment to show understanding
+   - [ ] calculate some test cases by hand
+   - [ ] load a dictionary (same as benchdict)
+   - [ ] histogram for repeated hits 

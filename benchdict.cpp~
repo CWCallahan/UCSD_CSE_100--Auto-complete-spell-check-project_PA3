@@ -1,0 +1,4 @@
+#include "util.h"
+#include "DictionaryTrie.h"
+#include "DictionaryBST.h"
+#include "DictionaryHashtable.h"

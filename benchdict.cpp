@@ -1,0 +1,144 @@
+#include "util.h"
+#include "DictionaryTrie.h"
+#include "DictionaryBST.h"
+#include "DictionaryHashtable.h"
+#include <cstdlib>
+#include <fstream>
+#include <string>
+#include <cstdlib>
+
+
+int main(int argc, char* argv[])
+{
+  Timer t;
+  std::cout << "ummm.." << argv[4] << argv[2] << argv[3] << argv[1] << std::endl;
+  
+  int min_size          =  atoi(argv[1]);
+  int step_size         =  atoi(argv[2]);
+  int num_iterations    =  atoi(argv[3]);
+  std::string dictfile  =  argv[4];
+
+  //for( int i=0; i<num_iterations; i++)
+  //std::cout<< "what is wrong"<< std::endl;
+  //*
+  std::cout        <<
+    min_size       << std::endl <<
+    step_size      << std::endl <<
+    num_iterations << std::endl <<
+    dictfile       << std::endl;
+  //*/
+  
+  int toLoad;
+  toLoad = min_size;
+  std::cout << "Starting Benchmarking for DictionaryBST: " << std::endl;
+  //in a for loop
+  for( int i=0; i<num_iterations; i++){
+    //std::cout <<"i: \t" << i << std::endl;
+    
+    t.begin_timer();
+    //std::ifstream in(dictfile, std::ifstream::in);
+    //    in.open(dictfile, std::ios::binary);
+    //std::cout << in.is_open() << std::endl;
+    std::ifstream in;
+    in.open(dictfile, std::ios::binary);
+    
+    DictionaryBST dictionary;
+    //std::cout << "test 1 " << std::endl;
+    Utils::load_dict(dictionary, in, toLoad);
+    //std::cout << "test 2 " << std::endl;
+    in.close();
+    
+    std::cout << t.end_timer() << "\t" << toLoad << std::endl;
+    toLoad += step_size;
+    
+    //print the value and the n value in a gnuplot friendly format
+  }
+
+  
+  toLoad = min_size;
+  std::cout << "Starting Benchmarking for DictionaryHashtable: " << std::endl;
+  //in a for loop
+  for( int i=0; i<num_iterations; i++){
+    
+    t.begin_timer();
+    //insert into the tree (load dict)
+    std::ifstream in;
+    in.open(dictfile, std::ios::binary);
+       
+    DictionaryHashtable dictionary;
+    Utils::load_dict(dictionary, in, toLoad);
+    in.close();
+    
+    //in.open(dict_filename, std::ios::binary);
+    std::cout << t.end_timer() << "\t" << toLoad << std::endl;
+    toLoad += step_size;
+    
+    //print the value and the n value in a gnuplot friendly format
+  }
+
+  toLoad = min_size;
+  std::cout << "Starting Benchmarking for DictionaryTrie: " << std::endl;
+  //in a for loop
+  for( int i=0; i<num_iterations; i++){
+    
+    t.begin_timer();
+    //insert into the tree (load dict)
+    std::ifstream in;
+    in.open(dictfile, std::ios::binary);
+       
+    DictionaryTrie dictionary;
+    Utils::load_dict(dictionary, in, toLoad);
+    in.close();
+    
+    //in.open(dict_filename, std::ios::binary);
+    std::cout << t.end_timer() << "\t" << toLoad << std::endl;
+    toLoad += step_size;
+    
+    //print the value and the n value in a gnuplot friendly format
+  }
+
+  /**
+  std::cout << "Starting Benchmarking for DictionaryTrie: " << std::endl;
+  //in a for loop
+  for( int i=min_size; i/step_size >= num_iterations; i+=step_size){
+    
+    t.begin_timer();
+    //insert into the tree (load dict)
+    std::ifstream in;
+    in.open(dictfile, std::ios::binary);
+    
+    DictionaryTrie dictionary;
+    Utils::load_dict(dictionary, in, i);
+    in.close();
+    
+    //in.open(dict_filename, std::ios::binary);
+    std::cout << t.end_timer() << "\t" << i << std::endl;
+    
+    //print the value and the n value in a gnuplot friendly format
+    }
+//*/
+
+}
+/*
+For each Dictionary class (DictionaryBST, DictionaryHashtable, DictionaryTrie):
+
+    Print a message to standard out to indicate which dictionary class you are benchmarking.
+
+    For num_iterations iterations:
+
+Create a new dictionary object of that class and load min_size + i*step_size 
+(where i is the current iteration) words from the beginning of the dictionary file 
+(you will need to reset the istream to the start of the dictionary file at the start of 
+each iteration).  If there are fewer than min_size+i*step_size words in the file, it 
+should print a warning, but continue to run. Note that there is a load_dict function 
+already implemented that allows you to load dictionaries of a certain size in the provided 
+Utils class in util.cpp/h.
+
+Read the next 100 words from the dictionary file and then compute the time to find those 
+100 words in the dictionary object.  They will not be there.  Using the same 100 words, 
+repeat the find process many times and take the average time of all the runs.  Be sure to 
+time only the part when you are looking for the words in the dictionary.   
+
+Print the dictsize and the running time you calculated in step two to standard out, separated 
+by a tab (\t)
+//*/
